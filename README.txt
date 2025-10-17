@@ -1,0 +1,1 @@
+Lembre de criar o arquivo .env e rodar o npm i
