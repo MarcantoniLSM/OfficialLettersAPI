@@ -1,22 +1,37 @@
-const Joi = require('joi');
+const { body } = require('express-validator');
 
-const registerSchema = Joi.object({
-  name: Joi.string().min(2).max(100).required(),
-  email: Joi.string().email().required(),
-  password: Joi.string().min(6).required(),
-  role: Joi.string().valid('ADMIN','COMMON').default('COMMON')
-});
+const registerValidation = [
+  body('name')
+    .trim().isLength({ min: 2 }).withMessage('Nome deve ter pelo menos 2 caracteres'),
+  body('email')
+    .isEmail().withMessage('Email inválido'),
+  body('password')
+    .isLength({ min: 6 }).withMessage('Senha deve ter pelo menos 6 caracteres'),
+  body('role')
+    .optional()
+    .isIn(['ADMIN', 'COMMON']).withMessage('Role deve ser ADMIN ou COMMON')
+];
 
-const loginSchema = Joi.object({
-  email: Joi.string().email().required(),
-  password: Joi.string().required()
-});
+const loginValidation = [
+  body('email')
+    .isEmail().withMessage('Email inválido'),
+  body('password')
+    .notEmpty().withMessage('Senha é obrigatória')
+];
 
-const updateSchema = Joi.object({
-  name: Joi.string().min(2).max(100),
-  email: Joi.string().email(),
-  password: Joi.string().min(6),
-  role: Joi.string().valid('ADMIN','COMMON')
-}).min(1);
+const updateValidation = [
+  body('name')
+    .optional()
+    .isLength({ min: 2 }).withMessage('Nome deve ter pelo menos 2 caracteres'),
+  body('email')
+    .optional()
+    .isEmail().withMessage('Email inválido'),
+  body('password')
+    .optional()
+    .isLength({ min: 6 }).withMessage('Senha deve ter pelo menos 6 caracteres'),
+  body('role')
+    .optional()
+    .isIn(['ADMIN', 'COMMON']).withMessage('Role inválida')
+];
 
-module.exports = { registerSchema, loginSchema, updateSchema };
+module.exports = { registerValidation, loginValidation, updateValidation };

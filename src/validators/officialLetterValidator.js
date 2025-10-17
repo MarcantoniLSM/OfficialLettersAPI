@@ -1,9 +1,12 @@
-const Joi = require('joi');
+const { body } = require('express-validator');
 
-const createLetterSchema = Joi.object({
-  destinationId: Joi.string().uuid().required(),
-  subject: Joi.string().min(3).max(200).required(),
-  body: Joi.string().min(5).required()
-});
+const createLetterValidation = [
+  body('destinationId')
+    .isUUID().withMessage('destinationId deve ser um UUID válido'),
+  body('subject')
+    .trim().isLength({ min: 3 }).withMessage('Assunto deve ter pelo menos 3 caracteres'),
+  body('body')
+    .trim().isLength({ min: 5 }).withMessage('Texto deve ter pelo menos 5 caracteres')
+];
 
-module.exports = { createLetterSchema };
+module.exports = { createLetterValidation };

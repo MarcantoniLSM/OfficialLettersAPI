@@ -22,5 +22,13 @@
     "passwordHash": "$2b$10$t0728NdMitXC2mB./dSVMef9lZK49W3vO6aA2LCJEabG5D/gnbKLC",
     "role": "COMMON",
     "createdAt": "2025-10-17T20:04:07.480Z"
+  },
+  {
+    "id": "97474d28-439f-48e3-a5ce-2e6b7f274aab",
+    "name": "user 3",
+    "email": "user3@gmail.com",
+    "passwordHash": "$2b$10$bdWYzMRgIV64e6XyDrkt/uMAqN3Yod4HiYXtPW94mc73u.dF5Ob4S",
+    "role": "COMMON",
+    "createdAt": "2025-10-17T20:47:21.655Z"
   }
 ]

@@ -14,5 +14,13 @@
     "subject": "Assunto 2",
     "body": "texto 2.",
     "createdAt": "2025-10-17T20:09:19.606Z"
+  },
+  {
+    "id": "5f814c1c-1ae6-4920-a1d8-05e13ff2ae0a",
+    "originId": "ccdbb2f6-ff34-494e-b858-3c160e4db174",
+    "destinationId": "47e64163-6032-43e2-a5ae-83193395cff3",
+    "subject": "Assunto 3",
+    "body": "texto 3.",
+    "createdAt": "2025-10-17T20:47:49.649Z"
   }
 ]

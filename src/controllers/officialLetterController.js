@@ -5,8 +5,7 @@ const { createLetterSchema } = require('../validators/officialLetterValidator');
 
 // Criar nova carta
 async function createLetter(req, res) {
-  const { error, value } = createLetterSchema.validate(req.body);
-  if (error) return res.status(400).json({ message: error.message });
+  const value = req.body;
 
   const users = await readUsers();
   const destinationUser = users.find(u => u.id === value.destinationId);

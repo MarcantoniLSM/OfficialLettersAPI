@@ -11,8 +11,7 @@ const jwtExpiresIn = process.env.JWT_EXPIRES_IN || '1h';
 
 //Cadastro
 async function register(req, res) {
-  const { error, value } = registerSchema.validate(req.body);
-  if (error) return res.status(400).json({ message: error.message });
+  const value = req.body;
 
   const users = await readUsers();
   if (users.some(u => u.email.toLowerCase() === value.email.toLowerCase())) {
@@ -38,8 +37,7 @@ async function register(req, res) {
 
 //Login
 async function login(req, res) {
-  const { error, value } = loginSchema.validate(req.body);
-  if (error) return res.status(400).json({ message: error.message });
+  const value = req.body;
 
   const users = await readUsers();
   const user = users.find(u => u.email === value.email.toLowerCase());
@@ -76,8 +74,7 @@ async function getUser(req, res) {
 
 //Atualizar
 async function updateUser(req, res) {
-  const { error, value } = updateSchema.validate(req.body);
-  if (error) return res.status(400).json({ message: error.message });
+  const value = req.body;
 
   const { id } = req.params;
   const users = await readUsers();
