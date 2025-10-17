@@ -1,0 +1,26 @@
+[
+  {
+    "id": "47e64163-6032-43e2-a5ae-83193395cff3",
+    "name": "marcantoni",
+    "email": "marcantoni@gmail.com",
+    "passwordHash": "$2b$10$9MjL.jluABrL1qQfx.kgf.QwYw5iW.1pGYiz7U5AMoBobbGqPdxgm",
+    "role": "ADMIN",
+    "createdAt": "2025-10-17T13:20:44.686Z"
+  },
+  {
+    "id": "ccdbb2f6-ff34-494e-b858-3c160e4db174",
+    "name": "user 1",
+    "email": "user1@gmail.com",
+    "passwordHash": "$2b$10$ikQjauA0sF7wT3r3dZoyR.eRuqZtqUSh5pbFIifdONAisOQqhGU1q",
+    "role": "COMMON",
+    "createdAt": "2025-10-17T13:26:25.920Z"
+  },
+  {
+    "id": "10875b10-9ac3-4b5e-8ce3-42bbc7d3f550",
+    "name": "user 2",
+    "email": "user2@gmail.com",
+    "passwordHash": "$2b$10$t0728NdMitXC2mB./dSVMef9lZK49W3vO6aA2LCJEabG5D/gnbKLC",
+    "role": "COMMON",
+    "createdAt": "2025-10-17T20:04:07.480Z"
+  }
+]
